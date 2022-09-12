@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/devodev/go-office365/v0/pkg/office365"
+	"github.com/recolabs/go-office365/pkg/office365"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

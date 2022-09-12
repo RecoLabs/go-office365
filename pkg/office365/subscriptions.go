@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"io"
 
-	"github.com/devodev/go-office365/v0/pkg/office365/schema"
+	"github.com/recolabs/go-office365/pkg/office365/schema"
 )
 
 // SubscriptionService .
@@ -45,7 +45,7 @@ func (s *SubscriptionService) List(ctx context.Context) (*Response, []Subscripti
 // - Re-enable an expired webhook by specifying a later or null expiration date.
 // - Remove a webhook.
 //
-// Webhook validation
+// # Webhook validation
 //
 // When the /start operation is called and a webhook is specified, we will send a validation notification
 // to the specified webhook address to validate that an active listener can accept and process notifications.

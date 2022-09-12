@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/devodev/go-office365/v0/pkg/office365/schema"
+	"github.com/recolabs/go-office365/pkg/office365/schema"
 )
 
 // State is an interface for storinm and retrievinm Watcher state.

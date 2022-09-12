@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/devodev/go-office365/v0/pkg/office365/schema"
+	"github.com/recolabs/go-office365/pkg/office365/schema"
 )
 
 // AuditService .
