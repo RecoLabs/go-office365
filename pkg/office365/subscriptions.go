@@ -62,7 +62,10 @@ func (s *SubscriptionService) Start(ctx context.Context, ct *schema.ContentType,
 
 	var payload io.Reader
 	if webhook != nil {
-		data, err := json.Marshal(webhook)
+		webhookRequest := &WebhookRequest{
+			Webhook: webhook,
+		}
+		data, err := json.Marshal(webhookRequest)
 		if err != nil {
 			return nil, nil, err
 		}
@@ -73,6 +76,8 @@ func (s *SubscriptionService) Start(ctx context.Context, ct *schema.ContentType,
 	if err != nil {
 		return nil, nil, err
 	}
+
+	req.Header.Add("Content-Type", "application/json; utf-8")
 
 	var out *Subscription
 	resp, err := s.client.do(ctx, req, &out)
@@ -116,4 +121,8 @@ type Webhook struct {
 	Address    *string `json:"address"`
 	AuthID     *string `json:"authId,omitempty"`
 	Expiration *string `json:"expiration,omitempty"`
+}
+
+type WebhookRequest struct {
+	Webhook *Webhook `json:"webhook"`
 }
