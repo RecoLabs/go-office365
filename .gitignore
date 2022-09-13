@@ -17,4 +17,7 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
+.vscode/
+.go-office365.yaml
+go-office365
