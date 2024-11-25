@@ -193,5 +193,10 @@ func AddExtendedSchema(r *schema.AuditLogRecordType, raw json.RawMessage, data *
 			*data = d
 		}
 	case schema.MicrosoftFormsType:
+	case schema.CopilotInteractionType:
+		var d schema.CopilotBase
+		if err := json.Unmarshal(raw, &d); err == nil {
+			*data = d
+		}
 	}
 }
