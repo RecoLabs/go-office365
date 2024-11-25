@@ -117,6 +117,7 @@ const (
 	AirInvestigationType = iota + 8
 	QuarantineType
 	MicrosoftFormsType
+	CopilotInteractionType = 261
 )
 
 func (t AuditLogRecordType) String() string {
@@ -164,6 +165,7 @@ func (t AuditLogRecordType) String() string {
 		AirInvestigationType:                      "AirInvestigation",
 		QuarantineType:                            "Quarantine",
 		MicrosoftFormsType:                        "MicrosoftForms",
+		CopilotInteractionType:                    "CopilotInteraction",
 	}
 	return literals[t]
 }
@@ -214,6 +216,7 @@ func GetRecordType(s string) (*AuditLogRecordType, error) {
 		"AirInvestigation":                      AirInvestigationType,
 		"Quarantine":                            QuarantineType,
 		"MicrosoftForms":                        MicrosoftFormsType,
+		"CopilotInteraction":                    CopilotInteractionType,
 	}
 	t, ok := literals[s]
 	if !ok {
